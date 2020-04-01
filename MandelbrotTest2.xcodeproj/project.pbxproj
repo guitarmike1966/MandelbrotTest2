@@ -14,6 +14,7 @@
 		D9FF73BF24340C5C002B9D3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FF73BD24340C5C002B9D3D /* LaunchScreen.storyboard */; };
 		D9FF73CA24340C5C002B9D3D /* MandelbrotTest2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF73C924340C5C002B9D3D /* MandelbrotTest2Tests.swift */; };
 		D9FF73D524340C5C002B9D3D /* MandelbrotTest2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF73D424340C5C002B9D3D /* MandelbrotTest2UITests.swift */; };
+		D9FF73E32434102E002B9D3D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF73E22434102E002B9D3D /* CustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D9FF73D024340C5C002B9D3D /* MandelbrotTest2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MandelbrotTest2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FF73D424340C5C002B9D3D /* MandelbrotTest2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelbrotTest2UITests.swift; sourceTree = "<group>"; };
 		D9FF73D624340C5C002B9D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9FF73E22434102E002B9D3D /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				D9FF73B424340C5B002B9D3D /* AppDelegate.swift */,
 				D9FF73B624340C5B002B9D3D /* ViewController.swift */,
+				D9FF73E22434102E002B9D3D /* CustomView.swift */,
 				D9FF73B824340C5B002B9D3D /* Main.storyboard */,
 				D9FF73BB24340C5C002B9D3D /* Assets.xcassets */,
 				D9FF73BD24340C5C002B9D3D /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FF73E32434102E002B9D3D /* CustomView.swift in Sources */,
 				D9FF73B724340C5B002B9D3D /* ViewController.swift in Sources */,
 				D9FF73B524340C5B002B9D3D /* AppDelegate.swift in Sources */,
 			);
