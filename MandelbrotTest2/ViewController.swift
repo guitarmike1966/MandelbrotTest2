@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         
         view.addSubview(canvas)
         canvas.frame = view.frame
+        
+        print("This is the development branch")
     }
 
 
