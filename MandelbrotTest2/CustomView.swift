@@ -51,8 +51,8 @@ class CustomView: UIView {
         let xa: Double = -2.5
         let xb: Double = 1.0
 
-        let ya: Double = -1.0
-        let yb: Double = 1.0
+        let ya: Double = -1.25
+        let yb: Double = 1.25
 
         let imgx = self.frame.width
         let imgy = self.frame.height
@@ -68,7 +68,7 @@ class CustomView: UIView {
 
         var iteration: Int = 0
         // let max_iteration: Int = 1000
-        let max_iteration: Int = 100
+        let max_iteration: Int = 200
 
 
         while (((x * x) + (y * y) <= (2 * 2)) && (iteration < max_iteration)) {
@@ -81,11 +81,30 @@ class CustomView: UIView {
             //        plot(Px, Py, color)
         }
 
-        if iteration > 20 {
-            print("iteration: \(iteration)")
-        }
+//        if iteration > 2 {
+//            print("\niteration: \(iteration)")
+//        }
 
-        let retval: UIColor = UIColor(displayP3Red: CGFloat(iteration)/CGFloat(max_iteration), green: 0, blue: 0, alpha: 1)
+        let red = (iteration % 4) * 64
+        let green = (iteration % 8) * 32
+        let blue = (iteration % 16) * 16
+
+//        if (red > 0) {
+//            print("\n   raw  : \(iteration % 4)")
+//            print("   red  : \(red)")
+//        }
+//
+//        if (green > 0) {
+//            print("\n   raw  : \(iteration % 8)")
+//            print("   green: \(green)")
+//        }
+//
+//        if (blue > 0) {
+//            print("\n   raw  : \(iteration % 16)")
+//            print("   blue : \(blue)")
+//        }
+
+        let retval: UIColor = UIColor(displayP3Red: CGFloat(red)/CGFloat(256), green: CGFloat(green)/CGFloat(256), blue: CGFloat(blue)/CGFloat(256), alpha: 1)
 
         // return UIColor.red
         return retval
