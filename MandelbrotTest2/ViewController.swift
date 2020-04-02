@@ -11,16 +11,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let canvas = CustomView()
-
+    @IBOutlet weak var MandelbrotView: CustomView!
+    @IBOutlet weak var ZoomOutButton: UIButton!
+    @IBOutlet weak var ZoomInButton: UIButton!
+    @IBOutlet weak var MoveLeftButton: UIButton!
+    @IBOutlet weak var MoveRightButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        view.addSubview(canvas)
-        canvas.frame = view.frame
-        
-        print("This is the development branch")
+
+        ZoomOutButton.layer.borderWidth = 1
+        ZoomOutButton.layer.borderColor = UIColor.black.cgColor
+        ZoomOutButton.layer.cornerRadius = 5
+
+        ZoomInButton.layer.borderWidth = 1
+        ZoomInButton.layer.borderColor = UIColor.black.cgColor
+        ZoomInButton.layer.cornerRadius = 5
+
+        MoveLeftButton.layer.borderWidth = 1
+        MoveLeftButton.layer.borderColor = UIColor.black.cgColor
+        MoveLeftButton.layer.cornerRadius = 5
+
+        MoveRightButton.layer.borderWidth = 1
+        MoveRightButton.layer.borderColor = UIColor.black.cgColor
+        MoveRightButton.layer.cornerRadius = 5
     }
 
 
