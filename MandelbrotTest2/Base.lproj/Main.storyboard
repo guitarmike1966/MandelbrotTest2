@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDD-IP-7ig" customClass="CustomView" customModule="MandelbrotTest2" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="374" height="588"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EK0-4h-bbx">
                                 <rect key="frame" x="100" y="616" width="90" height="100"/>
                                 <subviews>
@@ -53,6 +55,9 @@
                                                     <constraint firstAttribute="width" constant="25" id="iwp-5z-GjZ"/>
                                                 </constraints>
                                                 <state key="normal" image="minus"/>
+                                                <connections>
+                                                    <action selector="ZoomOutButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xNL-j4-6GC"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIc-6E-J8d">
                                                 <rect key="frame" x="71" y="10.666666666666629" width="25" height="25"/>
@@ -61,6 +66,9 @@
                                                     <constraint firstAttribute="width" constant="25" id="wku-n3-dz8"/>
                                                 </constraints>
                                                 <state key="normal" image="plus"/>
+                                                <connections>
+                                                    <action selector="ZoomInButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJI-TP-d0Z"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -74,6 +82,9 @@
                                                     <constraint firstAttribute="width" constant="25" id="neA-4k-NTh"/>
                                                 </constraints>
                                                 <state key="normal" image="arrow-left"/>
+                                                <connections>
+                                                    <action selector="MoveLeftButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YnC-PV-E59"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwB-CQ-PSC">
                                                 <rect key="frame" x="71" y="10.666666666666629" width="25" height="25"/>
@@ -82,6 +93,9 @@
                                                     <constraint firstAttribute="width" constant="25" id="OWX-UN-cQg"/>
                                                 </constraints>
                                                 <state key="normal" image="arrow-right"/>
+                                                <connections>
+                                                    <action selector="MoveRightButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jXo-0S-geO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -90,16 +104,12 @@
                                     <constraint firstAttribute="height" constant="100" id="bCk-Bz-cFm"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDD-IP-7ig" customClass="CustomView" customModule="MandelbrotTest2" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="374" height="588"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="fDD-IP-7ig" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5Au-tV-5QZ"/>
                             <constraint firstItem="EK0-4h-bbx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="O36-Sv-XCP"/>
                             <constraint firstItem="fDD-IP-7ig" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Vqb-do-CHH"/>
-                            <constraint firstItem="fDD-IP-7ig" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="g91-fl-PTE"/>
                             <constraint firstItem="kQx-b4-L50" firstAttribute="top" secondItem="fDD-IP-7ig" secondAttribute="bottom" constant="8" symbolic="YES" id="mUj-Om-JG0"/>
                             <constraint firstItem="EK0-4h-bbx" firstAttribute="top" secondItem="fDD-IP-7ig" secondAttribute="bottom" constant="8" symbolic="YES" id="rew-gN-LuX"/>
                             <constraint firstItem="fDD-IP-7ig" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rx9-cA-GkU"/>

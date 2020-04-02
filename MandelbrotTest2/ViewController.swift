@@ -16,8 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var ZoomInButton: UIButton!
     @IBOutlet weak var MoveLeftButton: UIButton!
     @IBOutlet weak var MoveRightButton: UIButton!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -40,5 +39,82 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func MoveLeftButtonClick(_ sender: Any) {
+        let range = MandelbrotView.xb - MandelbrotView.xa
+        let move = range / 5
+
+//        print("Original xa: \(MandelbrotView.xa)")
+//        print("Original xb: \(MandelbrotView.xb)")
+
+        MandelbrotView.xa -= move
+        MandelbrotView.xb -= move
+        
+//        print("New xa: \(MandelbrotView.xa)")
+//        print("New xb: \(MandelbrotView.xb)")
+
+        MandelbrotView.setNeedsDisplay()
+    }
+
+
+    @IBAction func MoveRightButtonClick(_ sender: Any) {
+        let range = MandelbrotView.xb - MandelbrotView.xa
+        let move = range / 5
+
+//        print("Original xa: \(MandelbrotView.xa)")
+//        print("Original xb: \(MandelbrotView.xb)")
+
+        MandelbrotView.xa += move
+        MandelbrotView.xb += move
+        
+//        print("New xa: \(MandelbrotView.xa)")
+//        print("New xb: \(MandelbrotView.xb)")
+
+        MandelbrotView.setNeedsDisplay()
+    }
+
+    @IBAction func ZoomOutButtonClick(_ sender: Any) {
+        let xrange = MandelbrotView.xb - MandelbrotView.xa
+        let xmove = xrange / 8
+
+        let yrange = MandelbrotView.yb - MandelbrotView.ya
+        let ymove = yrange / 8
+
+        //        print("Original xa: \(MandelbrotView.xa)")
+        //        print("Original xb: \(MandelbrotView.xb)")
+
+        MandelbrotView.xa -= xmove
+        MandelbrotView.xb += xmove
+
+        MandelbrotView.ya -= ymove
+        MandelbrotView.yb += ymove
+
+        //        print("New xa: \(MandelbrotView.xa)")
+        //        print("New xb: \(MandelbrotView.xb)")
+
+        MandelbrotView.setNeedsDisplay()
+    }
+    
+    @IBAction func ZoomInButtonClick(_ sender: Any) {
+        let xrange = MandelbrotView.xb - MandelbrotView.xa
+        let xmove = xrange / 8
+
+        let yrange = MandelbrotView.yb - MandelbrotView.ya
+        let ymove = yrange / 8
+
+        //        print("Original xa: \(MandelbrotView.xa)")
+        //        print("Original xb: \(MandelbrotView.xb)")
+
+        MandelbrotView.xa += xmove
+        MandelbrotView.xb -= xmove
+
+        MandelbrotView.ya += ymove
+        MandelbrotView.yb -= ymove
+
+        //        print("New xa: \(MandelbrotView.xa)")
+        //        print("New xb: \(MandelbrotView.xb)")
+
+        MandelbrotView.setNeedsDisplay()
+
+    }
 }
 

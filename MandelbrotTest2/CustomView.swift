@@ -10,6 +10,12 @@ import UIKit
 
 class CustomView: UIView {
 
+    var xa: Double = -2.0
+    var xb: Double = 1.0
+
+    var ya: Double = -1.25
+    var yb: Double = 1.25
+
     override func draw(_ rect: CGRect) {
 
         super.draw(rect)
@@ -21,7 +27,7 @@ class CustomView: UIView {
             return
         }
 
-        print("Get Current Context successful")
+        // print("Get Current Context successful")
 
 //        context.setStrokeColor(UIColor.red.cgColor)
 //        context.stroke(CGRect(x: 50, y: 50, width: 50, height: 50))
@@ -69,12 +75,6 @@ class CustomView: UIView {
     }
 
     private func Mandelbrot(Px: Int, Py: Int) -> UIColor {
-
-        let xa: Double = -2.0
-        let xb: Double = 1.0
-
-        let ya: Double = -1.25
-        let yb: Double = 1.25
 
         let imgx = self.frame.width
         let imgy = self.frame.height
